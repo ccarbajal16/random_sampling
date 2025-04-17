@@ -2,12 +2,13 @@
 title: "Random Soil Sampling Points Generator"
 subtitle: "A simple Shiny application for generating random sampling points"
 author: "Carlos Carbajal"
-date: "2025-04-17"
+date: today
 format:
   html:
     grid:
       body-width: 1200px
     toc: true
+    embed-resources: false
     resources:
       - shinylive-sw.js
 filters:
@@ -15,9 +16,6 @@ filters:
 ---
 
 ```{shinylive-r}
-#| !! shinylive warning !!: |
-#|   shinylive does not work in self-contained HTML documents.
-#|   Please set `embed-resources: false` in your metadata.
 #| standalone: true
 #| viewerHeight: 700
 # Load required packages
