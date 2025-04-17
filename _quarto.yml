@@ -1,5 +1,23 @@
 project:
-  title: "random_sampling"
+  type: website
+  output-dir: docs
+  render:
+    - random_sampling.qmd
 
+website:
+  title: "Random Soil Sampling Points Generator"
+  navbar:
+    left:
+      - href: index.html
+        text: Home
+      - href: random_sampling.html
+        text: App
+    right:
+      - icon: github
+        href: https://github.com/ccarbajal16/random_sampling
+  page-footer: "Created by Carlos Carbajal (@ccarbajal16)"
 
-
+format:
+  html:
+    theme: cosmo
+    toc: true

@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: ccarbajal16/random_sampling
+      url: https://ccarbajal16.github.io/random_sampling/

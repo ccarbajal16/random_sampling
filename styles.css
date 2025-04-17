@@ -1,0 +1,88 @@
+/* Custom styles for the Random Soil Sampling Points Generator */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  color: #2c3e50;
+}
+
+.navbar {
+  background-color: #3c8dbc !important;
+}
+
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #f0f0f0 !important;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Add some spacing to the content */
+.content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Style links */
+a {
+  color: #3c8dbc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style code blocks */
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+/* Style tables */
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f8f9fa;
+}
+
+/* Style blockquotes */
+blockquote {
+  border-left: 4px solid #3c8dbc;
+  padding-left: 1rem;
+  color: #555;
+}
+
+/* Style buttons */
+.btn-primary {
+  background-color: #3c8dbc;
+  border-color: #367fa9;
+}
+
+.btn-primary:hover {
+  background-color: #367fa9;
+  border-color: #2d6b8e;
+}

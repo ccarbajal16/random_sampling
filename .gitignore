@@ -1,0 +1,22 @@
+# R specific files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Quarto files
+/.quarto/
+/_site/
+/_freeze/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Editor specific files
+.vscode/
+.idea/
+
+# Rendered output
+*.html
+*_files/
