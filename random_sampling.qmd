@@ -18,9 +18,8 @@ filters:
 ```{shinylive-r}
 #| standalone: true
 #| viewerHeight: 700
-#| components: [editor, viewer]
+#| components: [viewer]
 #| layout: vertical
-#| viewerHeight: 700
 # Load required packages
 library(shiny)
 library(shinydashboard)
