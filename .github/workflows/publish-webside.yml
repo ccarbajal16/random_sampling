@@ -49,27 +49,66 @@
         - name: "Set up Quarto"
           uses: quarto-dev/quarto-actions/setup@v2
 
-        # Render the Quarto file
-        - name: "Render working directory"
+        # Render the Quarto files
+        - name: "Render index file"
+          uses: quarto-dev/quarto-actions/render@v2
+          with:
+            to: html
+            path: index.qmd
+
+        - name: "Render app file"
           uses: quarto-dev/quarto-actions/render@v2
           with:
             to: html
             path: random_sampling.qmd
 
-        # Add a step to check if the _site directory exists
-        - name: Ensure _site directory exists
+        - name: "Render test file"
+          uses: quarto-dev/quarto-actions/render@v2
+          with:
+            to: html
+            path: test_shinylive.qmd
+
+        # Add a step to check if the docs directory exists and copy files if needed
+        - name: Ensure docs directory exists and contains rendered files
           run: |
-            if [ ! -d "_site" ]; then
-              echo "Error: _site directory does not exist. Check the Quarto rendering step."
-              exit 1
+            if [ ! -d "docs" ]; then
+              echo "Creating docs directory..."
+              mkdir -p docs
             fi
-        
+
+            # Check if HTML files exist in the root and copy them to docs if needed
+            if [ -f "index.html" ] && [ ! -f "docs/index.html" ]; then
+              echo "Copying index.html to docs directory..."
+              cp index.html docs/
+            fi
+
+            if [ -f "random_sampling.html" ] && [ ! -f "docs/random_sampling.html" ]; then
+              echo "Copying random_sampling.html to docs directory..."
+              cp random_sampling.html docs/
+            fi
+
+            if [ -f "test_shinylive.html" ] && [ ! -f "docs/test_shinylive.html" ]; then
+              echo "Copying test_shinylive.html to docs directory..."
+              cp test_shinylive.html docs/
+            fi
+
+            # Copy any other necessary files (like _files directories)
+            if [ -d "random_sampling_files" ] && [ ! -d "docs/random_sampling_files" ]; then
+              echo "Copying random_sampling_files directory..."
+              cp -r random_sampling_files docs/
+            fi
+
+            # List the contents of the docs directory
+            echo "Contents of docs directory:"
+            ls -la docs/
+
         # Upload a tar file that will work with GitHub Pages
         # Make sure to set a retention day to avoid running into a cap
         # This artifact shouldn't be required after deployment onto pages was a success.
         - name: Upload Pages artifact
           uses: actions/upload-pages-artifact@v3
           with:
+            path: docs
             retention-days: 1
 
         # Use an Action deploy to push the artifact onto GitHub Pages
